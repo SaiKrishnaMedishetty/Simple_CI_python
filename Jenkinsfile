@@ -25,6 +25,7 @@ pipeline {
       steps {
         sh '''
           . .venv/bin/activate
+          export PYTHONPATH=$PWD
           mkdir -p reports
           pytest --junitxml=reports/junit.xml \
                  --html=reports/report.html --self-contained-html
